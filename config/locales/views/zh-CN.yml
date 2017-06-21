@@ -6,6 +6,8 @@ zh-CN:
       title: 新增运行环境
     edit:
       title: 编辑运行环境
+    update:
+      success: 保存成功
   apps:
     index:
       title: 应用管理

@@ -13,8 +13,9 @@
       <tr>
         <td><%= app.name %></td>
         <td>
+          <%= link_to t('new_config'), new_app_config_path(app) %>
           <%= link_to t('edit'), edit_app_path(app) %>
-          <%= link_to t('destroy'), app, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to t('destroy'), app, method: :delete, data: { confirm: t('delete_confirm') } %>
         </td>
       </tr>
     <% end %>

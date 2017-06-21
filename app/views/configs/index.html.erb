@@ -19,7 +19,7 @@
         <td>
           <%= link_to '显示', app_config_path(config.app, config) %>
           <%= link_to '编辑', edit_app_config_path(config.app, config) %>
-          <%= link_to '删除', app_config_path(config.app, config), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '删除', app_config_path(config.app, config), method: :delete, data: { confirm: t('delete_confirm') } %>
         </td>
       </tr>
     <% end %>

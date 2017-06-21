@@ -5,7 +5,7 @@ class ConfigsController < ApplicationController
   # GET /configs
   # GET /configs.json
   def index
-    @configs = Config.includes(:app, :env).all
+    @configs = @app.configs.includes(:app, :env).all
   end
 
   # GET /configs/1
@@ -30,7 +30,7 @@ class ConfigsController < ApplicationController
 
     respond_to do |format|
       if @config.save
-        format.html { redirect_to app_config_path(@config.app, @config), notice: 'Config was successfully created.' }
+        format.html { redirect_to app_config_path(@config.app, @config), notice: t('save_success') }
         format.json { render :show, status: :created, location: @config }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ConfigsController < ApplicationController
   def update
     respond_to do |format|
       if @config.update(config_params)
-        format.html { redirect_to app_config_path(@config.app, @config), notice: 'Config was successfully updated.' }
+        format.html { redirect_to app_config_path(@config.app, @config), notice: t('save_success') }
         format.json { render :show, status: :ok, location: @config }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ConfigsController < ApplicationController
   def destroy
     @config.destroy
     respond_to do |format|
-      format.html { redirect_to configs_url, notice: 'Config was successfully destroyed.' }
+      format.html { redirect_to configs_url, notice: t('delete_success') }
       format.json { head :no_content }
     end
   end

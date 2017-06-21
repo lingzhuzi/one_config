@@ -214,6 +214,7 @@ zh-CN:
   edit: 编辑
   destroy: 删除
   back: 返回列表页
+  new_config: 新建配置
 
   app: 应用
   env: 运行环境
@@ -221,3 +222,7 @@ zh-CN:
   filename: 文件名
   content: 内容
   oprations: 操作
+
+  save_success: 保存成功
+  delete_success: 删除成功
+  delete_confirm: 确认删除？

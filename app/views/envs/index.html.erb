@@ -14,7 +14,7 @@
         <td><%= env.name %></td>
         <td>
           <%= link_to t('edit'), edit_env_path(env) %>
-          <%= link_to t('destroy'), env, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to t('destroy'), env, method: :delete, data: { confirm: t('delete_confirm') } %>
         </td>
       </tr>
     <% end %>

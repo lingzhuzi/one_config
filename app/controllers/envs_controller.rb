@@ -28,7 +28,7 @@ class EnvsController < ApplicationController
 
     respond_to do |format|
       if @env.save
-        format.html { redirect_to @env, notice: 'Env was successfully created.' }
+        format.html { redirect_to envs_url, notice: t('save_success') }
         format.json { render :show, status: :created, location: @env }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EnvsController < ApplicationController
   def update
     respond_to do |format|
       if @env.update(env_params)
-        format.html { redirect_to @env, notice: 'Env was successfully updated.' }
+        format.html { redirect_to envs_url, notice: t('save_success') }
         format.json { render :show, status: :ok, location: @env }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EnvsController < ApplicationController
   def destroy
     @env.destroy
     respond_to do |format|
-      format.html { redirect_to envs_url, notice: 'Env was successfully destroyed.' }
+      format.html { redirect_to envs_url, notice: t('delete_success') }
       format.json { head :no_content }
     end
   end
