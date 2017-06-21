@@ -1,0 +1,37 @@
+<%= form_with(model: [app, config], local: true) do |form| %>
+  <% if config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(config.errors.count, "error") %> prohibited this config from being saved:</h2>
+
+      <ul>
+      <% config.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :app_id %>
+    <%= form.number_field :app_id, id: :config_app_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :env %>
+    <%= form.text_field :env, id: :config_env %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :config_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :config_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

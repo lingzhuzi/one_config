@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App:</strong>
+  <%= @config.app_id %>
+</p>
+
+<p>
+  <strong>Env:</strong>
+  <%= @config.env %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @config.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @config.content %>
+</p>
+
+<%= link_to 'Edit', edit_app_config_path(@config.app, @config) %> |
+<%= link_to 'Back', app_configs_path %>

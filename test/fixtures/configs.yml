@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_id: 1
+  env: MyString
+  name: MyString
+  content: MyText
+
+two:
+  app_id: 1
+  env: MyString
+  name: MyString
+  content: MyText
