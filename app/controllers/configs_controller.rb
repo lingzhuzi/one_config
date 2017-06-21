@@ -1,11 +1,21 @@
 class ConfigsController < ApplicationController
-  before_action :set_app
+  before_action :set_app, except: [:download]
   before_action :set_config, only: [:show, :edit, :update, :destroy]
 
   # GET /configs
   # GET /configs.json
   def index
     @configs = @app.configs.includes(:app, :env).order(:env_id, :id)
+  end
+
+  # GET /configs/download.json?app_name=xxx&env=xxx
+  def download
+    @configs = []
+    app = App.find_by_name(params[:app_name])
+    env = Env.find_by_name(params[:env])
+    if app && env
+      @configs = app.configs.where(env_id: env.id)
+    end
   end
 
   # GET /configs/1
