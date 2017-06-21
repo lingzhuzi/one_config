@@ -220,7 +220,7 @@ zh-CN:
   name: 名称
   filename: 文件名
   content: 内容
-  opration: 操作
+  oprations: 操作
   configs_of_app: "%{app}的配置"
   show_config_label: "配置详情"
   editing_config: '编辑配置'

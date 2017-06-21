@@ -11,7 +11,9 @@
   <dd><%= @config.name %></dd>
 
   <dt><%= t 'content' %></dt>
-  <dd><%= @config.content %></dd>
+  <dd>
+    <pre><%= @config.content %></pre>
+  </dd>
 </dl>
 
 <%= link_to t('edit'), edit_app_config_path(@config.app, @config) %> |
