@@ -1,5 +1,5 @@
-<h1>New App</h1>
+<h2><%= t '.title' %></h2>
 
 <%= render 'form', app: @app %>
 
-<%= link_to 'Back', apps_path %>
+<%= link_to t('back'), apps_path %>

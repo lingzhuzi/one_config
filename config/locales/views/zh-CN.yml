@@ -1,0 +1,24 @@
+zh-CN:
+  envs:
+    index:
+      title: 运行环境管理
+    new:
+      title: 新增运行环境
+    edit:
+      title: 编辑运行环境
+  apps:
+    index:
+      title: 应用管理
+    new:
+      title: 新增应用
+    edit:
+      title: 编辑应用
+  configs:
+    index:
+      title: "%{app}的配置"
+    new:
+      title: 新增配置
+    edit:
+      title: 编辑配置
+    show:
+      title: 配置详情

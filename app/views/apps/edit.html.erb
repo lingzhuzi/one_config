@@ -1,6 +1,5 @@
-<h1>Editing App</h1>
+<h2><%= t '.title' %></h2>
 
 <%= render 'form', app: @app %>
 
-<%= link_to 'Show', @app %> |
-<%= link_to 'Back', apps_path %>
+<%= link_to t('back'), apps_path %>

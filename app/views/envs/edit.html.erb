@@ -1,6 +1,5 @@
-<h1>Editing Env</h1>
+<h2><%= t '.title' %></h2>
 
 <%= render 'form', env: @env %>
 
-<%= link_to 'Show', @env %> |
-<%= link_to 'Back', envs_path %>
+<%= link_to t('back'), envs_path %>

@@ -9,24 +9,34 @@
   </head>
 
   <body>
-    <div class="container">
-      <div id="notice"><%= notice %></div>
-      <h1>logo位</h1>
-      <div class="row">
-        <div class="col-md-2">
-          <label>APP列表</label>
-          <ul class="list-unstyled">
-            <% App.all.each do |app| %>
-              <li><%= link_to app.name, app_configs_path(app.id) %></li>
-            <% end %>
-            <li><%= link_to '添加APP', new_app_path %>
-            <li><%= link_to '添加ENV', new_env_path %>
+    <div id="notice"><%= notice %></div>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1>One Config</h1>
+
+        <div class="colophon">
+          <ul class="colophon-links">
+            <li><%= link_to 'APP管理', apps_path %>
+            <li><%= link_to 'ENV管理', envs_path %>
+            <li>
+              <%= link_to '配置管理', 'javascript: void(0)' %>
+              <ul>
+                <% App.all.each do |app| %>
+                  <li><%= link_to app.name, app_configs_path(app.id) %></li>
+                <% end %>
+              </ul>
+            </li>
           </ul>
+
         </div>
-        <div class="col-md-10">
-          <%= yield %>
-        </div>
+
       </div>
+
+    </header>
+
+    <div class="content container">
+      <%= yield %>
     </div>
   </body>
 </html>

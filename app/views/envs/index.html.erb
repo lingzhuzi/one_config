@@ -1,4 +1,4 @@
-<label>Envs</label>
+<h2><%= t '.title' %></h2>
 
 <table class="table">
   <thead>
@@ -13,7 +13,6 @@
       <tr>
         <td><%= env.name %></td>
         <td>
-          <%= link_to t('show'), env %>
           <%= link_to t('edit'), edit_env_path(env) %>
           <%= link_to t('destroy'), env, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -24,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Env', new_env_path %>
+<%= link_to t('new'), new_env_path %>
