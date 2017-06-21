@@ -1,10 +1,11 @@
 class ConfigsController < ApplicationController
+  before_action :set_app
   before_action :set_config, only: [:show, :edit, :update, :destroy]
 
   # GET /configs
   # GET /configs.json
   def index
-    @configs = Config.all
+    @configs = Config.includes(:app, :env).all
   end
 
   # GET /configs/1
@@ -63,14 +64,17 @@ class ConfigsController < ApplicationController
   end
 
   private
+    def set_app
+      @app = App.find(params[:app_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_config
-      @app = App.find(params[:app_id])
       @config = Config.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def config_params
-      params.require(:config).permit(:app_id, :env, :name, :content)
+      params.require(:config).permit(:app_id, :env_id, :name, :content)
     end
 end

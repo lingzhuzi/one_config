@@ -1,12 +1,12 @@
-<label>Configs</label>
+<label><%= t 'configs_of_app', app: @app.name %></label>
 
 <table class="table">
   <thead>
     <tr>
-      <th>App</th>
-      <th>Env</th>
-      <th>文件名</th>
-      <th>操作</th>
+      <th><%= t 'app' %></th>
+      <th><%= t 'env' %></th>
+      <th><%= t 'filename' %></th>
+      <th><%= t 'opration' %></th>
     </tr>
   </thead>
 
@@ -14,7 +14,7 @@
     <% @configs.each do |config| %>
       <tr>
         <td><%= config.app.name %></td>
-        <td><%= config.env %></td>
+        <td><%= config.env.name %></td>
         <td><%= config.name %></td>
         <td>
           <%= link_to '显示', app_config_path(config.app, config) %>

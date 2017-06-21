@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      env: 运行环境
+      app: 应用
+      config: 配置
+    attributes:
+      env:
+        name: 名称
+      app:
+        name: 名称
+      config:
+        name: 名称
+        app_id: 应用
+        env_id: 运行环境
+        content: 内容

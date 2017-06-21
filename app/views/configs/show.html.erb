@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
+<label><%= t 'show_config_label' %></label>
 
-<p>
-  <strong>App:</strong>
-  <%= @config.app_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><%= t 'app' %></dt>
+  <dd><%= @config.app.name %></dd>
 
-<p>
-  <strong>Env:</strong>
-  <%= @config.env %>
-</p>
+  <dt><%= t 'env' %></dt>
+  <dd><%= @config.env.name %></dd>
 
-<p>
-  <strong>Name:</strong>
-  <%= @config.name %>
-</p>
+  <dt><%= t 'filename' %></dt>
+  <dd><%= @config.name %></dd>
 
-<p>
-  <strong>Content:</strong>
-  <%= @config.content %>
-</p>
+  <dt><%= t 'content' %></dt>
+  <dd><%= @config.content %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_app_config_path(@config.app, @config) %> |
-<%= link_to 'Back', app_configs_path %>
+<%= link_to t('edit'), edit_app_config_path(@config.app, @config) %> |
+<%= link_to t('back'), app_configs_path %>

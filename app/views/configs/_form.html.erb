@@ -11,26 +11,28 @@
     </div>
   <% end %>
 
-  <div class="from-group">
+  <div class="form-group">
+    <%= form.label :app_id %>
     <%= form.hidden_field :app_id, id: :config_app_id, class: 'form-control' %>
+    <%= text_field_tag :app_name, app.name, class: 'form-control', disabled: true %>
   </div>
 
-  <div class="from-group">
-    <%= form.label :env %>
-    <%= form.text_field :env, id: :config_env, class: 'form-control' %>
+  <div class="form-group">
+    <%= form.label :env_id %>
+    <%= form.select :env_id, Env.all.collect { |p| [ p.name, p.id ] }, {include_blank: true}, id: :config_env_id, class: 'form-control' %>
   </div>
 
-  <div class="from-group">
+  <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, id: :config_name, class: 'form-control' %>
   </div>
 
-  <div class="from-group">
+  <div class="form-group">
     <%= form.label :content %>
     <%= form.text_area :content, id: :config_content, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

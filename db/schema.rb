@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170621015555) do
 
   create_table "configs", force: :cascade do |t|
     t.integer "app_id"
-    t.string "env"
+    t.integer "env_id"
     t.string "name"
     t.text "content"
     t.datetime "created_at", null: false
