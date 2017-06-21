@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Envs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @envs.each do |env| %>
+      <tr>
+        <td><%= env.name %></td>
+        <td><%= link_to 'Show', env %></td>
+        <td><%= link_to 'Edit', edit_env_path(env) %></td>
+        <td><%= link_to 'Destroy', env, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Env', new_env_path %>

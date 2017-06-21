@@ -1,4 +1,4 @@
-<%= form_with(model: [app, config], local: true) do |form| %>
+<%= form_with(model: [app, config], local: true, class: 'form') do |form| %>
   <% if config.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(config.errors.count, "error") %> prohibited this config from being saved:</h2>
@@ -11,24 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :app_id %>
-    <%= form.number_field :app_id, id: :config_app_id %>
+  <div class="from-group">
+    <%= form.hidden_field :app_id, id: :config_app_id, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="from-group">
     <%= form.label :env %>
-    <%= form.text_field :env, id: :config_env %>
+    <%= form.text_field :env, id: :config_env, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="from-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :config_name %>
+    <%= form.text_field :name, id: :config_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="from-group">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :config_content %>
+    <%= form.text_area :content, id: :config_content, class: 'form-control' %>
   </div>
 
   <div class="actions">
