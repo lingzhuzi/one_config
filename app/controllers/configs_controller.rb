@@ -5,7 +5,7 @@ class ConfigsController < ApplicationController
   # GET /configs
   # GET /configs.json
   def index
-    @configs = @app.configs.includes(:app, :env).all
+    @configs = @app.configs.includes(:app, :env).order(:env_id, :id)
   end
 
   # GET /configs/1
