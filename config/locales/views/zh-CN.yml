@@ -24,3 +24,14 @@ zh-CN:
       title: 编辑配置
     show:
       title: 配置详情
+  users:
+    default: &users_default
+      login: 用户名
+      password: 密码
+    index:
+      <<: *users_default
+      title: 用户管理
+    new:
+      title: 新增用户
+    edit:
+      title: 编辑用户

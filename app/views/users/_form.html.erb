@@ -1,0 +1,31 @@
+<%= form_with(model: user, local: true, class: 'form') do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= t('error_message', count: user.errors.count) %></h3>
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :login %>
+    <%= form.text_field :login, id: :user_login, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

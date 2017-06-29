@@ -4,6 +4,7 @@ zh-CN:
       env: 运行环境
       app: 应用
       config: 配置
+      user: 用户
     attributes:
       env:
         name: 名称
@@ -14,3 +15,7 @@ zh-CN:
         app_id: 应用
         env_id: 运行环境
         content: 内容
+      user:
+        login: 用户名
+        password: 密码
+        password_confirmation: 确认密码
