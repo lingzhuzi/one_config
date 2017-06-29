@@ -15,25 +15,28 @@
       <div class="masthead-inner">
         <h1>One Config</h1>
         <p>分布式配置管理平台</p>
-        <div class="colophon">
-          <ul class="colophon-links">
-            <li><%= link_to '用户管理', users_path %>
-            <li><%= link_to 'APP管理', apps_path %>
-            <li><%= link_to 'ENV管理', envs_path %>
-            <li>
-              <%= link_to '配置管理', 'javascript: void(0)' %>
-              <ul>
-                <% App.all.each do |app| %>
-                  <li><%= link_to app.name, app_configs_path(app.id) %></li>
-                <% end %>
-              </ul>
-            </li>
-          </ul>
-
+        <% if logged_in? %>
+          <p>
+            <label>当前用户：<%= current_user.login %></label>
+            <%= link_to t('logout'), logout_path, method: 'delete' %>
+          </p>
+          <div class="colophon">
+            <ul class="colophon-links">
+              <li><%= link_to '用户管理', users_path %>
+              <li><%= link_to 'APP管理', apps_path %>
+              <li><%= link_to 'ENV管理', envs_path %>
+              <li>
+                <%= link_to '配置管理', 'javascript: void(0)' %>
+                <ul>
+                  <% App.all.each do |app| %>
+                    <li><%= link_to app.name, app_configs_path(app.id) %></li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-
-      </div>
-
+      <% end %>
     </header>
 
     <div class="content container">

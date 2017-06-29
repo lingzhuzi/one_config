@@ -8,6 +8,10 @@ class User < ApplicationRecord
   before_save :generate_salt
   before_save :encrypt_password
 
+  def authenticate(password_text)
+    self.password == encrypt_with_salt(password_text)
+  end
+
   private
   def generate_salt
     chars = '0123456789abcdefghijklmnopqrstuvwxyz`~!#$%^&*()_+-=[]{}\|;:,./<>?'
@@ -19,6 +23,11 @@ class User < ApplicationRecord
   end
 
   def encrypt_password
-    self.password = Digest::SHA2.new(256).hexdigest("OneConfig_#{self.password}_#{self.salt}")
+    self.password = encrypt_with_salt(self.password)
   end
+
+  def encrypt_with_salt(text)
+    Digest::SHA2.new(256).hexdigest("OneConfig_#{text}_#{self.salt}")
+  end
+
 end

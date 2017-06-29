@@ -54,12 +54,15 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if User.count > 1
+    if current_user == @user
+      notice = '不可删除自己'
+     elsif User.count <= 1
+      notice = '请保留至少一个用户'
+    else
       @user.destroy
       notice = t('delete_success')
-    else
-      notice = '请保留至少一个用户'
     end
+
     respond_to do |format|
       format.html { redirect_to users_url, notice: notice }
       format.json { head :no_content }
