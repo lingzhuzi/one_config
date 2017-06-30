@@ -15,11 +15,12 @@ class User < ApplicationRecord
   private
   def generate_salt
     chars = '0123456789abcdefghijklmnopqrstuvwxyz`~!#$%^&*()_+-=[]{}\|;:,./<>?'
-    self.salt = ''
+    salt = ''
     random = Random.new
     32.times do
-      self.salt << chars[random.rand(chars.size)]
+      salt << chars[random.rand(chars.size)]
     end
+    self.salt = Digest::SHA2.new(256).hexdigest(salt)
   end
 
   def encrypt_password
