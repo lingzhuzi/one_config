@@ -8,6 +8,7 @@ class DownloadController < ApplicationController
     if app && env
       configs = app.configs.where(env_id: env.id)
     end
-    render json: configs
+    encrypted_text = EncryptHelper.encode(configs.to_json)
+    render plain: encrypted_text
   end
 end
