@@ -6,7 +6,7 @@ class DownloadController < ApplicationController
     app = App.find_by_name(params[:app_name])
     env = Env.find_by_name(params[:env])
     if app && env
-      configs = app.configs.where(env_id: env.id)
+      configs = app.configs.select(:name, :content).where(env_id: env.id)
     end
     encrypted_text = EncryptHelper.encode(configs.to_json)
     render plain: encrypted_text
