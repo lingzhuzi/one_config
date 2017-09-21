@@ -11,7 +11,7 @@
 5. 执行bundle install
 6. 执行rake db:migrate
 7. 执行rake db:seed
-8. 执行rails s，项目即可启动，打开浏览器访问http://localhost:3000/，使用默认用户admin/admin登录即可。
+8. 执行rails s，项目即可启动，打开浏览器访问<http://localhost:3000/>，使用默认用户admin/admin登录即可。
 
 ## 使用
 首先，需要添加自己的用户，删除默认用户（重要）！
@@ -22,7 +22,7 @@
 
 添加配置。选择运行环境、填写配置文件名称和配置文件内容，保存即可。
 
-下载配置。http get请求 http://localhost:3000/download/:app_name/:env，得到的数据为用aes-128-cbc算法，以secrets.yml中的encrypt_key和encrypt_iv进行加密的数据。
+下载配置。http get请求 <http://localhost:3000/download/:app_name/:env>，得到的数据为用aes-128-cbc算法，以secrets.yml中的encrypt_key和encrypt_iv进行加密的数据。
 
 ## Enjoy
 Thx
